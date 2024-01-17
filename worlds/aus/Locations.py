@@ -6,7 +6,7 @@ class LocData(NamedTuple):
     region: str
 class AUSLocation(Location):
     game: str = "An Untitled Story"
-
+    
     # override constructor to automatically mark event locations as such
     def __init__(self, player: int, name = "", code = None, parent = None) -> None:
         super(AUSLocation, self).__init__(player, name, code, parent)
@@ -88,7 +88,7 @@ location_table = {
     "Deepdive_chest": LocData(272149, "Deepdive"),
     "Nightclimb_chest": LocData(272150, "Nightclimb"),
     "Deepdive_right_path": LocData(272151, "Deepdive"),
-    "Skytown_astrocrash": LocData(272152, "Menu"),
+    # "Skytown_astrocrash": LocData(272152, "Menu"), # Exclude?
     "Grotto_eye_boss": LocData(272153, "Deepdive"),
     "Darkgrotto_top_left": LocData(272154, "Darkgrotto"),
     "Darkgrotto_mid_right": LocData(272155, "Darkgrotto"),
@@ -98,8 +98,8 @@ location_table = {
     "Curtain_break": LocData(272159, "Curtain"),
     "Nightwalk_chest": LocData(272160, "Curtain"),
     "Curtain_kill_4": LocData(272161, "Curtain"),
-    "Skytown_jumpbox": LocData(272162, "Menu"),
-    "Skytown_keep_going": LocData(272163, "Menu"),
+    # "Skytown_jumpbox": LocData(272162, "Menu"), # Exclude?
+    # "Skytown_keep_going": LocData(272163, "Menu"), # Exclude?
     "Deepdive_exit_heart_mid": LocData(272164, "Deepdive2"),
     "Deepdive_exit_heart_top": LocData(272165, "Deepdive2"),
     "Icecastle_entrance": LocData(272166, "Curtain"),
