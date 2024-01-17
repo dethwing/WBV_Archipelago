@@ -16,7 +16,7 @@ item_table = {
     "Duck": AUSItemData(272009, ItemClassification.progression),
     "Progressive Ceiling Stick": AUSItemData(272010, ItemClassification.progression),
     # "Teleport": AUSItemData(272012, ItemClassification.progression), # given automatically
-    "Smash": AUSItemData(272013, ItemClassification.useful),
+    "Smash": AUSItemData(272013, ItemClassification.progression),
     "Progressive Fire Shot": AUSItemData(272014, ItemClassification.progression),
     "Yellow Energy": AUSItemData(272016, ItemClassification.progression),
     "Hatch": AUSItemData(272017, ItemClassification.progression),
@@ -24,7 +24,7 @@ item_table = {
     "Money Magnet": AUSItemData(272020, ItemClassification.useful),
     "Ice Shot": AUSItemData(272021, ItemClassification.progression),
     "Toughness Upgrade": AUSItemData(272022, ItemClassification.useful),
-    "Heart": AUSItemData(272100, ItemClassification.useful),
+    "Heart": AUSItemData(272100, ItemClassification.filler),
     "Gold Orb": AUSItemData(272200, ItemClassification.progression),
     "Secret Flower": AUSItemData(272300, ItemClassification.progression),
     "10 Crystals": AUSItemData(272401, ItemClassification.filler),
@@ -44,6 +44,7 @@ item_table = {
     "400 Crystals": AUSItemData(272419, ItemClassification.progression),
     "300 Crystals": AUSItemData(272420, ItemClassification.progression),
     "100 Crystals": AUSItemData(272421, ItemClassification.progression),
+    "Victory": AUSItemData(272422, ItemClassification.progression),
 }
 
 item_pool: Dict[str, int] = {

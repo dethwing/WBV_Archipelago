@@ -29,9 +29,8 @@ class AUSRules:
             "Firecage": lambda state: self.can_stick(state) and self.has_red_energy(state) and self.can_shoot(state),
             "Mountside": lambda state: self.jump_height(state) + self.can_crouch(state) * 2 >= 8 and
                                          self.has_red_energy(state) and self.hatched(state),
-            "Curtain": self.curtain_check,
-            # "Curtain": lambda state: self.jump_height_min(state, 8) and self.can_slide(state) and 
-            #                             state.has_all({"Red Energy", "Yellow Energy", "Hatch", "Ice Shot"}, self.player),
+            "Curtain": lambda state: self.jump_height_min(state, 8) and self.can_slide(state) and 
+                                        state.has_all({"Red Energy", "Yellow Energy", "Hatch", "Ice Shot"}, self.player),
             "Skysand": lambda state: self.single_jump_min(state, 2) and self.double_jump_min(state, 2) and self.can_slide(state) and
                                         state.has_all({"Red Energy", "Progressive Fire Shot", "Ice Shot"}, self.player),
             "Darkgrotto": lambda state: self.has_ice(state) and self.can_smash(state),
@@ -173,6 +172,7 @@ class AUSRules:
             "Undertomb_right_heart_door": lambda state: self.can_smash(state),
             "Undertomb_left": lambda state: self.can_smash(state),
             "Undertomb_left_heart_door": lambda state: self.can_smash(state),
+            "Victory": lambda state: True,
         }
 
         self.boss_drop_values = {
@@ -209,7 +209,6 @@ class AUSRules:
     
     def jump_height_min(self, state: CollectionState, amount: int) -> bool:
         count = self.jump_height(state)
-        # print("Checking jump height. Current: " + str(self.jump_height(state)) + ", Required: " + str(amount) + ", verdict: " + str(count >= amount))
         return count >= amount
 
     def single_jump_min(self, state: CollectionState, amount: int) -> bool:
@@ -261,10 +260,6 @@ class AUSRules:
         """Hi Messenger!"""
         return True
 
-    def curtain_check(self, state: CollectionState) -> bool:
-        print("JH", self.jump_height_min(state, 8), "Slide", self.can_slide(state), "Stuff", state.has_all({"Red Energy", "Yellow Energy", "Hatch", "Ice Shot"}, self.player))
-        print("Stuff", state.has("Red Energy", self.player), state.has("Yellow Energy", self.player), state.has("Ice Shot", self.player))
-        return self.jump_height_min(state, 8) and self.can_slide(state) and state.has_all({"Red Energy", "Yellow Energy", "Hatch", "Ice Shot"}, self.player),
 
     def set_aus_rules(self) -> None:
         multiworld = self.world.multiworld
@@ -276,3 +271,5 @@ class AUSRules:
             for loc in region.locations:
                 if loc.name in self.location_rules:
                     loc.access_rule = self.location_rules[loc.name]
+
+        multiworld.completion_condition[self.player] = lambda state: state.has("Victory", self.player)

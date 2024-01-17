@@ -65,6 +65,8 @@ class AUSWorld(World):
         self.multiworld.regions += [AUSRegion(*r) for r in aus_regions]
         link_aus_areas(self.multiworld, self.player)
 
+        self.multiworld.get_location("Victory", self.player).place_locked_item(self.create_item("Victory"))
+
     def create_item(self, name: str) -> Item:
         item_data = item_table[name]
         item = AUSItem(name, item_data.classification, item_data.code, self.player)
