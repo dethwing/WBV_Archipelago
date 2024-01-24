@@ -245,7 +245,7 @@ class AUSRules:
         return state.has("Progressive Fire Shot", self.player, 2)
     
     def has_ice(self, state: CollectionState) -> bool:
-        return state.has("Progressive Ice Shot", self.player)
+        return state.has("Ice Shot", self.player)
     
     def can_shoot(self, state: CollectionState) -> bool:
         return self.has_fire(state) or self.has_ice(state)
