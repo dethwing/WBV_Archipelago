@@ -28,7 +28,7 @@ class AUSWorld(World):
     options: AUSOptions
     topology_present = False
 
-    base_id = 272000
+    base_id = 72000
     web = AnUntitledStoryWeb()
 
     item_name_to_id = {name: data.code for name, data in item_table.items()}
