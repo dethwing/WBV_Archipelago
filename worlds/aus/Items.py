@@ -38,13 +38,13 @@ item_table = {
     "180 Crystals": AUSItemData(72410, ItemClassification.progression),
     "270 Crystals": AUSItemData(72411, ItemClassification.progression),
     "150 Crystals": AUSItemData(72412, ItemClassification.progression),
-    "200 Crystals": AUSItemData(72413, ItemClassification.progression),
-    "235 Crystals": AUSItemData(72415, ItemClassification.progression),
-    "245 Crystals": AUSItemData(72417, ItemClassification.progression),
+    "200 Crystals": AUSItemData(72414, ItemClassification.progression),
+    "235 Crystals": AUSItemData(72417, ItemClassification.progression),
+    "245 Crystals": AUSItemData(72418, ItemClassification.progression),
     "400 Crystals": AUSItemData(72419, ItemClassification.progression),
     "300 Crystals": AUSItemData(72420, ItemClassification.progression),
     "100 Crystals": AUSItemData(72421, ItemClassification.progression),
-    "Victory": AUSItemData(72422, ItemClassification.progression),
+    "Victory": AUSItemData(None, ItemClassification.progression)
 }
 
 item_pool: Dict[str, int] = {

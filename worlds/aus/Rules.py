@@ -148,6 +148,7 @@ class AUSRules:
             # blackcastle
             "Blackcastle_end_flower": lambda state: self.has_fire(state),
             "Blackcastle_top_mid": lambda state: self.can_shoot(state),
+            "Victory": lambda state: True,
             # staircase
             "5_flowers": lambda state: state.has("Secret Flower", self.player, 5),
             "10_flowers": lambda state: state.has("Secret Flower", self.player, 10),
@@ -172,7 +173,6 @@ class AUSRules:
             "Undertomb_right_heart_door": lambda state: self.can_smash(state),
             "Undertomb_left": lambda state: self.can_smash(state),
             "Undertomb_left_heart_door": lambda state: self.can_smash(state),
-            "Victory": lambda state: True,
         }
 
         self.boss_drop_values = {
@@ -227,7 +227,7 @@ class AUSRules:
         return state.has("Yellow Energy", self.player)
 
     def can_crouch(self, state: CollectionState) -> bool:
-        return state.has("Crouch", self.player)
+        return state.has("Duck", self.player)
 
     def can_stick(self, state: CollectionState) -> bool:
         return state.has("Progressive Ceiling Stick", self.player)

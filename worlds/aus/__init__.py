@@ -47,8 +47,10 @@ class AUSWorld(World):
         pool = []
         for name, data in item_table.items():
             for amount in range(item_pool.get(name, 1)):
-                item = AUSItem(name, data.classification, data.code, self.player)
-                pool.append(item)
+                if name != "Victory":
+                    item = AUSItem(name, data.classification, data.code, self.player)
+                    print(item, amount)
+                    pool.append(item)
 
         self.multiworld.itempool += pool
 

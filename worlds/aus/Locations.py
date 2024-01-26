@@ -183,5 +183,5 @@ location_table = {
     "15_flowers": LocData(72419, "Curtain"),
     "Rainbowdive_300": LocData(72420, "Curtain"),
     "Rainbowdive_100": LocData(72421, "Curtain"),
-    "Victory": LocData(72500, "Blackcastle")
+    "Victory": LocData(None, "Blackcastle")
 }
