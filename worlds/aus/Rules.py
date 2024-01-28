@@ -101,8 +101,8 @@ class AUSRules:
             "Stonecastle_top_heart": lambda state: self.jump_height_min(state, 8) and self.has_red_energy(state) and self.has_yellow_energy(state),
             "Stonecastle_heart_door": lambda state: self.jump_height_min(state, 4),
             "Stonecastle_hidden_heart": lambda state: self.jump_height_min(state, 4),
-            "Stonecastle_rock_boss": lambda state: (self.jump_height_min(state, 4) and self.double_jump_min(state, 1))or self.jump_height_min(state, 5) and self.can_smash(state) and self.has_red_energy(state),
-            "Stonecastle_boss_5": lambda state: (self.jump_height_min(state, 4) and self.double_jump_min(state, 1))or self.jump_height_min(state, 5) and self.has_red_energy(state),
+            "Stonecastle_rock_boss": lambda state: ((self.jump_height_min(state, 4) and self.double_jump_min(state, 1)) or self.jump_height_min(state, 5)) and self.can_smash(state) and self.has_red_energy(state),
+            "Stonecastle_boss_5": lambda state: ((self.jump_height_min(state, 4) and self.double_jump_min(state, 1)) or self.jump_height_min(state, 5)) and self.has_red_energy(state),
             "Stonecastle_eye_boss": lambda state: self.jump_height_min(state, 8) and self.has_red_energy(state) and self.has_yellow_energy(state) and self.can_slide(state) and self.can_smash(state),
             "Stonecastle_boss_9": lambda state: self.jump_height_min(state, 8) and self.has_red_energy(state) and self.has_yellow_energy(state) and self.can_slide(state) and self.can_smash(state),
             # deepdive
