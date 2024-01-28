@@ -47,7 +47,7 @@ class AUSRules:
             # nightwalk
             "Nightwalk_save_flower": lambda state: self.jump_height_min(state, 5),
             "Nightwalk_sky_heart": lambda state: (self.can_crouch(state) and self.jump_height_min(state, 6) and (self.double_jump_min(state, 2) or self.can_slide(state))) or state.can_reach("Curtain", "Region", self.player),
-            "Nightwalk_block_heart": lambda state: (self.jump_height_min(state, 2) or self.double_jump_min(state, 1)),
+            "Nightwalk_block_heart": lambda state: self.can_smash(state) and (self.jump_height_min(state, 2) or self.double_jump_min(state, 1)),
             "Nightwalk_hatch": lambda state: (self.can_crouch(state) and self.jump_height_min(state, 6) and self.double_jump_min(state, 1)) or state.can_reach("Curtain", "Region", self.player),
             "Nightwalk_shrine_heart": lambda state: self.jump_height_min(state, 2.5),
             "Nightwalk_shrine_torches": lambda state: self.jump_height_min(state, 2.5) and self.can_light_torches(state),
