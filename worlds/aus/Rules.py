@@ -16,7 +16,7 @@ class AUSRules:
     boss_drop_values: Dict[str, int]
     maximum_price: int
     required_seals: int 
-    ORB_COUNT: int = 10
+    ORB_COUNT: int = 7
 
     def __init__(self, world: "AUSWorld") -> None:
         self.player = world.player
