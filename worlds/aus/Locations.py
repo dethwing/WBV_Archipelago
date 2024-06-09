@@ -66,7 +66,7 @@ location_table = {
     "Firecage_mid": LocData(72127, "Firecage"),
     "Firecage_mid_heart_door": LocData(72128, "Firecage"),
     "Firecage_bot": LocData(72129, "Firecage"),
-    "Farfall_3_balloons": LocData(72130, "Farfall"),
+    "Farfall_3_balloons": LocData(72130, "Bottom"),
     "Bottom_heart": LocData(72131, "Bottom"),
     "Coldkeep_cannon_heart": LocData(72132, "Menu"),
     "Stonecastle_top_heart": LocData(72133, "Menu"),
